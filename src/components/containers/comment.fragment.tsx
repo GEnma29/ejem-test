@@ -1,6 +1,7 @@
 import React from "react";
-import { StarIcon } from "@heroicons/react/20/solid";
 import VerifiedUserIcon from "../icons/verificate-user.icon";
+import StarIcon from "../icons/star.icon";
+import UserAvatar from "../../assets/user/user-avatar.png";
 
 const reviews = {
   average: 4,
@@ -20,8 +21,7 @@ const reviews = {
           <p>“As soon as the Clarifions arrived I put one in my bedroom. This was late in the afternoon. When I went to the bedroom in the evening it smelled clean. When I went to bed I felt I could breathe better. Wonderful.”</p>
         `,
       author: "Ken T.",
-      avatarSrc:
-        "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80",
+      avatarSrc: UserAvatar,
     },
   ],
 };
@@ -30,7 +30,7 @@ function classNames(...classes: string[]) {
 }
 const CommentFragment: React.FC = () => {
   return (
-    <div className="flex mt-6 h-[186px] p-6 max-w-xl rounded-lg bg-white-100">
+    <div className="hidden lg:flex mt-6 h-[186px] p-6 max-w-xl rounded-lg bg-white-100">
       {reviews.featured.map((review) => (
         <div key={review.id} className="flex flex-col">
           <div className="flex items-center">
@@ -54,11 +54,11 @@ const CommentFragment: React.FC = () => {
                   />
                 ))}
               </div>
-              <div className="flex justify-center items-center mt-1">
+              <div className="flex justify-center items-center">
                 <h4 className="text-sm font-bold text-gray-900">
                   {review.author}
                 </h4>
-                <div className="flex ml-1 justify-center items-center ">
+                <div className="flex ml-2.5 justify-center items-center ">
                   <VerifiedUserIcon />
                   <p className="ml-1 text-green-400">Verified Customer</p>
                 </div>
@@ -68,7 +68,7 @@ const CommentFragment: React.FC = () => {
           </div>
 
           <div
-            className="mt-4 space-y-6 text-base italic text-gray-600"
+            className="mt-4 space-y-6 text-base italic text-grey-200"
             dangerouslySetInnerHTML={{ __html: review.content }}
           />
         </div>

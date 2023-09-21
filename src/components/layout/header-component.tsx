@@ -30,7 +30,7 @@ const Header: React.FC = () => {
         </div>
         <div className="flex w-full ">
         <div className="flex lg:ml-[7%] w-full  lg:max-w-[1100px] justify-around bg-white ">
-          <div className="flex py-[30px] w-full  justify-between items-center">
+          <div className="flex p-5 lg:p-0 lg:py-[30px] w-full  justify-between items-center">
             <img
               srcSet={`${largeLogo} 600w`}
               src={smallLogo}
